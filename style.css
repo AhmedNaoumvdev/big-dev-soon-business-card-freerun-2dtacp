@@ -1,0 +1,154 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+:root{
+    --green: #2f7d33;
+    --small-boxes: #e1e1e1;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+}
+
+.container .right{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+}
+.container .right::before{
+    content: "";
+    position: absolute;
+    right: -100px;
+    top: -100px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: var(--green);
+}
+.container .right .maincontents{
+    height: 500px;
+    margin-left: 3%;
+    padding-top: 50px;
+    list-style-position: inside;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.container .right .maincontents h1{
+    font-size: 5vw;
+}
+.container .right .maincontents h1 span{
+    color: var(--green);
+}
+.container .right .maincontents h2{
+    font-size: 1.8vw;
+}
+.container .right .maincontents li{
+    margin-bottom: 10px;
+    margin-left: 20px;
+    font-weight: 100;
+}
+.container .right .image{
+    background-image: url(./assets/user-photo.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 700px;
+    min-width: 35%;
+    margin-left: -4%;
+    margin-bottom: 3%;
+    z-index: 1;
+    position: relative;
+}
+.container .right .image .one{
+    position: absolute;
+    width: 60px;
+    height: 25px;
+    background-color: var(--small-boxes);
+    right: -40px;
+    top: 15px;
+}
+.container .right .image .two{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: var(--small-boxes);
+    left: -30px;
+    top: 100px;
+}
+.container .right .image .three{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: var(--small-boxes);
+    left: 20px;
+    bottom: -30px;
+}
+.container .right .image .four{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--green);
+    right: -30px;
+    bottom: -30px;
+    z-index: 0;
+}
+.container .left{
+    width: 380px;
+    background-color: var(--green);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 80px;
+}
+.container .left .white{
+    width: 100%;
+    height: 40px;
+    background-color: white;
+}
+.container .left .email , .phone, .socials{
+    width: 100%;
+    padding-left: 30px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+@media (max-width: 769px){
+    .container{
+        flex-direction: column-reverse;
+    }
+    .container .right{
+        width: 100vw;
+        height:70vh;
+    }
+    
+    .container .right .maincontents h2{
+        font-size: 5vw;
+    }
+    .container .right .maincontents h1{
+        font-size: 10vw;
+    }
+    .container .left{
+        width: 100vw;
+        height: 30vh;
+        padding: 0;
+        justify-content: center;
+    }
+    .two{
+        display: none;
+    }
+    .container .right .image{
+        height: 80%;
+        margin: 0;
+    }
+}
